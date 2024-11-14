@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação no Arduino</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="corpo">
+    <header>
+        <h1>Programação para Arduino</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="tutoriais.html">Tutoriais</a></li>
+                <li><a href="componentes.html">Componentes</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="fotos.html">Galeria de Fotos</a></li>
+                <li><a href="links.html">Links Úteis</a></li>
+                <li><a href="tabela.html">Tabela de Sensores</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. Piscar um LED</h2>
+            <p>Este exemplo simples faz um LED piscar a cada 1 segundo.</p>
+            <pre><code>
+void setup() {
+    pinMode(13, OUTPUT);  // Define o pino 13 como saída
+}
+
+void loop() {
+    digitalWrite(13, HIGH);  // Liga o LED
+    delay(1000);             // Aguarda 1 segundo
+    digitalWrite(13, LOW);   // Desliga o LED
+    delay(1000);             // Aguarda 1 segundo
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>2. Emitir Som com Buzzer</h2>
+            <p>Este exemplo faz um buzzer emitir um som por 1 segundo e depois ficar silencioso por 1 segundo.</p>
+            <pre><code>
+void setup() {
+    pinMode(8, OUTPUT);  // Define o pino 8 como saída para o buzzer
+}
+
+void loop() {
+    digitalWrite(8, HIGH);  // Liga o buzzer
+    delay(1000);            // Aguarda 1 segundo
+    digitalWrite(8, LOW);   // Desliga o buzzer
+    delay(1000);            // Aguarda 1 segundo
+}
+            </code></pre>
+            <p><strong>Explicação:</strong> O buzzer é conectado ao pino 8 do Arduino. Quando o pino é colocado em estado "HIGH", o buzzer emite som; quando em "LOW", o buzzer fica mudo.</p>
+        </section>
+
+        <section>
+            <h2>3. Controlar LED com Botão</h2>
+            <p>Este exemplo faz um LED ligar e desligar ao pressionar um botão.</p>
+            <pre><code>
+const int botao = 7;   // Define o pino do botão
+const int led = 13;    // Define o pino do LED
+int estadoBotao = 0;   // Variável para armazenar o estado do botão
+
+void setup() {
+    pinMode(led, OUTPUT);    // Define o pino do LED como saída
+    pinMode(botao, INPUT);   // Define o pino do botão como entrada
+}
+
+void loop() {
+    estadoBotao = digitalRead(botao);  // Lê o estado do botão
+
+    if (estadoBotao == HIGH) {         // Se o botão estiver pressionado
+        digitalWrite(led, HIGH);       // Liga o LED
+    } else {
+        digitalWrite(led, LOW);        // Desliga o LED
+    }
+}
+            </code></pre>
+            <p><strong>Explicação:</strong> O botão está conectado ao pino 7 do Arduino e o LED ao pino 13. Quando o botão é pressionado, o LED acende, e quando o botão é solto, o LED apaga.</p>
+        </section>
+    </main>
+    <footer class="rodape">
+        <p>Flavio Gomes Menezes Porto | RA: 5168098</p>
+    </footer>
+</body>
+</html>
+

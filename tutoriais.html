@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais de Arduino</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="corpo">
+    <header>
+        <h1>Tutoriais de Arduino para Iniciantes</h1>
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="tutoriais.html">Tutoriais</a></li>
+                <li><a href="componentes.html">Componentes</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="programacao.html">Programação</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="fotos.html">Galeria de Fotos</a></li>
+                <li><a href="links.html">Links Úteis</a></li>
+                <li><a href="tabela.html">Tabela de Sensores</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section>
+        <h2>Primeiros Passos com Arduino</h2>
+        <p>
+            <h3>Neste tutorial, você aprenderá a fazer um LED piscar usando o Arduino. Este é o primeiro passo para entender o básico de eletrônica e programação no ambiente Arduino. Seguindo este simples projeto, você terá a oportunidade de aprender como interagir com o hardware, programar o Arduino e controlar um componente externo, como o LED.</h3>
+            
+            <p>
+            <h3> Materiais necessários: </h3>
+            1 Arduino (qualquer modelo, como o Uno ou Nano)
+            1 LED
+            1 Resistor de 220Ω
+            Fios de conexão (jumpers)
+            Protoboard (opcional)
+            Passo 1: Conectando o LED ao Arduino
+            Insira o LED na protoboard (se estiver usando uma).
+            Conecte o pino positivo do LED (geralmente o maior) ao pino digital 13 do Arduino.
+            Conecte o pino negativo do LED ao resistor de 220Ω.
+            Conecte a outra extremidade do resistor ao pino GND (terra) do Arduino.
+            </p>        
+           <h3> Passo 2: Programando o Arduino</h3>
+            <p>Agora, você vai programar o Arduino para fazer o LED piscar. Aqui está o código simples:
+            
+            
+        
+            void setup() {
+              pinMode(13, OUTPUT);  // Configura o pino 13 como saída
+            }
+            
+            void loop() {
+              digitalWrite(13, HIGH);  // Acende o LED
+              delay(1000);              // Aguarda 1 segundo
+              digitalWrite(13, LOW);   // Apaga o LED
+              delay(1000);              // Aguarda 1 segundo
+            }
+            </p>
+            
+            <h3>Passo 3: Carregando o Código no Arduino </h3>
+
+            <p>Abra o Arduino IDE no seu computador.
+            Selecione a placa e a porta correta no menu "Ferramentas".
+            Clique no botão de upload (seta para a direita) para enviar o código para o seu Arduino.
+            </p>
+            
+            <h3>Passo 4: Testando o LED</h3>
+            <p>Após carregar o código, o LED deve começar a piscar com um intervalo de 1 segundo.</p>
+        </p>
+    </section>
+
+    <footer class="rodape">
+        <p>Flavio Gomes Menezes Porto | RA: 5168098</p>
+    </footer>
+</body>
+</html>
+
